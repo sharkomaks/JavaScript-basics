@@ -4,22 +4,15 @@ function sort(array) {
     const arraySort = [];
     for (let i = 0; i < array.length; i++) {
         let current = array[i];
-        let added = false;
+        let index = 0;
         for (let j = 0; j < array.length; j++) {
             if (current > array[j]) {
-                arraySort.push(current);
-                added = true;
-                break;
-            } else if (current < array[j]) {
-                arraySort.unshift(current)
-                added = true;
-                break;
+                index++;
             }
         }
+        arraySort.splice(index, 0, current);
     }
-    return arraySort;
+    return arraySort
 }
 
 console.log(sort(arr));
-
-// я не понимаю почему код работает не правильно

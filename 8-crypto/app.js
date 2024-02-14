@@ -2,19 +2,23 @@
 // console.log(password)
 
 function cryptoPassword(password) {
-    const [one, two, three, four, five, six, seven, eight, ...other] = password.split('');
-    return [seven, five, four, three, eight, one, six, two, ...other].join('')
+    const half = Math.floor(password.split('').length / 2);
+    const firstHalf = password.slice(0, half);
+    const secondHalf = password.slice(half);
+    return [secondHalf, firstHalf].join('');
 }
 
 function checkPassword(encryptedPassword, password) {
-    const [seven, five, four, three, eight, one, six, two, ...other] = encryptedPassword.split('');
-    const checkPass = [one, two, three, four, five, six, seven, eight, ...other].join('');
+    const half = Math.floor(encryptedPassword.split('').length / 2);
+    const firstHalf = encryptedPassword.slice(0, half);
+    const secondHalf = encryptedPassword.slice(half);
+    const checkPass = [secondHalf, firstHalf].join('');
     return checkPass === password;
 }
 
-console.log(cryptoPassword('password')); // Выведет: rwssdpoa
-console.log(checkPassword('rwssdpoa', 'password'));// Выведет: true
-console.log(checkPassword('rwssdpoa', 'wrong')); // Выведет: false
+console.log(cryptoPassword('password')); // Выведет: wordpass
+console.log(checkPassword('wordpass', 'password'));// Выведет: true
+console.log(checkPassword('wordpass', 'wrong')); // Выведет: false
 
 // console.log(cryptoPassword(password));
 // console.log(checkPassword(cryptoPassword(password), password));
