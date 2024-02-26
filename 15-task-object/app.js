@@ -8,14 +8,13 @@ const toDoList = {
             this.id++;
             task.id = this.id;
             this.tasks.push(task);
-            return this.id
         }
     },
-    deleteTaskById: function (idNumber) {
+    removeTaskById: function (idNumber) {
         this.tasks = this.tasks.filter(task => task.id !== idNumber);
     },
     renameById: function (idNumber, newTitle, newPriority) {
-        this.tasks.forEach(task => {
+        this.tasks.filter(task => {
             if (task.id === idNumber) {
                 task.title = newTitle;
                 task.priority = newPriority;
@@ -44,7 +43,7 @@ toDoList.addTask({
     priority: 2,
 });
 console.log(toDoList.tasks);
-toDoList.deleteTaskById(2);
+toDoList.removeTaskById(2);
 console.log(toDoList.tasks);
 toDoList.renameById(3, 'Купить продуктов', 3);
 console.log(toDoList.tasks);
