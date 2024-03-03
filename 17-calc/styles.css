@@ -46,6 +46,7 @@
     display: flex;
     gap: 20px;
     justify-content: center;
+    margin: 20px 0;
 }
 
 .result__text, .result__number {
@@ -58,4 +59,22 @@
 .result__number {
     width: 255px;
     text-align: center;
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+}
+
+.reset__button {
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #ff4949;
+    border: 1px solid lightslategray;
+    width: 100px;
+}
+
+.reset__button:hover {
+    background: #ff8282;
 }
