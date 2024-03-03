@@ -63,6 +63,9 @@ function divide() {
     const num2 = document.querySelector('.input__num2').value;
     if (!checkForNumber(num1, num2)) {
         return;
+    } else if (Number(num2) === 0) {
+        document.querySelector('.result__number').innerText = 'На ноль делить нельзя';
+        return;
     }
     document.querySelector('.result__number').innerText = Number(num1) / Number(num2);
 }
