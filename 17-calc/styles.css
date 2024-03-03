@@ -1,0 +1,61 @@
+.input-text {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.input {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: lightsalmon;
+    border: 1px solid lightslategray;
+    width: 170px;
+}
+
+.input::placeholder {
+    color: black;
+}
+
+.action {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.action__text {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: lightblue;
+    border: 1px solid lightslategray;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: lightblue;
+    border: 1px solid lightslategray;
+}
+
+.button:hover {
+    background: #80e4fd;
+}
+
+.result {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.result__text, .result__number {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: lightgreen;
+    border: 1px solid lightslategray;
+}
+
+.result__number {
+    width: 255px;
+    text-align: center;
+}
